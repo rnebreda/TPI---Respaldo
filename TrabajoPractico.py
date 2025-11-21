@@ -423,7 +423,7 @@ def listarPais(pais, modoLista = False):
         return
 
     # Encabezado
-    encabezado = f"| {'NOMBRE':<20} | {'POBLACIÓN':>12} | {'SUPERFICIE':>12} | {'CONTINENTE':>15} |"
+    encabezado = f"| {'NOMBRE':<20} |   {'POBLACIÓN':<12} |   {'SUPERFICIE':<12} | {'CONTINENTE':>10} |"
     separador = "-" * len(encabezado)
 
     print(separador)
@@ -431,7 +431,7 @@ def listarPais(pais, modoLista = False):
     print(separador)
 
     # Listar Data del País
-    print(f"| {pais['nombre']:<20} | {pais['poblacion']:>12} | {pais['superficie']:>12} | {pais['continente']:>15} |")
+    print(f"| {pais['nombre']:<20} | {pais['poblacion']:>14,} | {pais['superficie']:>14,} | {pais['continente']:>10} |")
     print(separador)
 
 """Lista la información de todos los paises de una lista pasada como parámetro"""
@@ -745,10 +745,10 @@ def reporteCotasPoblacion(informacion):
     menor = informacion["paisMenorPoblacion"]
 
     # Listar resultados
-    print("[1] País con mayor población: " + mayor['nombre'] + ", " + str(mayor['poblacion']) + " habitantes.")
+    print("[1] País con mayor población (cantidad de habitantes): ")
     listarPais(mayor)
 
-    print("\n" + "[2] País con menor población: " + menor['nombre'] + ", " + str(menor['poblacion']) + " habitantes.")
+    print("\n" + "[2] País con menor población (cantidad de habitantes): ")
     listarPais(menor)
 
 """Genera reporte con los promedios solicitados"""
@@ -771,7 +771,7 @@ def reportePromedios(informacion):
         clave = claves[i]
         promedio = informacion[clave]
 
-        print(f"| {i + 1:>3} | {clave:<15} | {round(promedio, 2):<15} |")
+        print(f"| {i + 1:>3} | {clave:<15} | {round(promedio, 2):<15,} |")
 
         # Separador entre filas
         if i < len(claves) - 1:
