@@ -99,7 +99,7 @@ def actualizarPais(): #OPCION 2 DEL MENU
         print("\t" + "[X] No hay paises cargados.")
         return
 
-    nombre = input("[-] Ingrese el nombre del país a consultar: ").strip()
+    nombre = input("[-] Ingrese el nombre del país a modificar: ").strip()
 
     if not nombre:
         print("\t" + "[X] El nombre del país no puede estar vacío.")
@@ -171,7 +171,7 @@ def mostrarPais(): #OPCION 3 DEL MENU
         return
 
     # Listo la información del país
-    print(f"[!] Listando similares...")
+    print(f"[!] Listando resultados similares...")
 
     listarPaises(resultados)
 
@@ -511,7 +511,7 @@ def normalizarCampoStr(texto):
 """ Retorna el nombre de un país válido e inexistente en la lista de paises. """
 def cargarCampoNombre(paises):
     while True:
-        nombre = input("[-] Ingrese el nombre del pais: ").strip()
+        nombre = input("[-] Ingrese el nombre del pais (máximo 20 caracteres): ").strip()
         if esValidoNombre(nombre, paises):
             break
     return nombre
