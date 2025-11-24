@@ -579,17 +579,17 @@ def filtrarPorCantidad(paises, criterio):
 
     paisesFiltrados = []
 
-    # Si no se especifica el campo, retorno
+    # Si no se especifica el campo, retorna
     if not criterio:
         print("\t" + f"[X] Es necesario especificar el criterio por el cuál filtrar (campo)")
         return paisesFiltrados
 
-    # Solicito al usuario que ingrese las cotas inferior y superior.
-    print("\n" + "[!] Ingrese la población mínima y máxima para realizar el filtrado: (Incluyendo extremos: [inf; sup])")
+    # Solicita al usuario que ingrese las cotas inferior y superior.
+    print("\n" + "[!] Ingrese la cantidad mínima y máxima para realizar el filtrado: (Incluyendo extremos: [inf; sup])")
     cotaInferior = input("\t" + "[-] Cota inferior: ").strip()
     cotaSuperior = input("\t" + "[-] Cota Superior: ").strip()
 
-    # Valido las cotas
+    # Validación de las cotas
     if not esEnteroPositivo(cotaInferior, "Cota inferior no válida"):
         return paisesFiltrados
 
@@ -603,13 +603,13 @@ def filtrarPorCantidad(paises, criterio):
         print("\t" + f"[X] La cota inferior no puede ser mayor a la cota superior")
         return paisesFiltrados
 
-    # Filtro los paises que cumplan la condición
+    # Filtra los paises que cumplan la condición
     for pais in paises:
         cantidad = normalizarCampoStr(pais[criterio])
 
         cantidad = int(cantidad)
 
-        # Si el campo del país esta dentro del rango de las cotas, lo incluyo a la lista de resultado (paisesFiltrados)
+        # Si el campo del país esta dentro del rango de las cotas, se lo incluye en la lista de resultado (paisesFiltrados)
         if cotaSuperior >= cantidad and cantidad >= cotaInferior:
             paisesFiltrados.append(pais)
 
