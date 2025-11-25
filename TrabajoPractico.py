@@ -180,7 +180,7 @@ def filtrarPaises(): #OPCION 4 DEL MENU
 
     # Elegír criterio de filtrado (criterio filtrado / criterio ordenamiento / ordenamiento)
     while True:
-        print("\n" + "[!] Menú de Actualización")
+        print("\n" + "[!] Menú de Filtrado")
         print("\t" + "1. Continente")
         print("\t" + "2. Rango de Población")
         print("\t" + "3. Rango de Superficie")
@@ -773,7 +773,6 @@ def reportePaisesPorContinente(informacion):
         print(f"| {i + 1:>3} | {continente:<14} | {informacion[continente]:<10} |")
 
     print(separador)
-
 
 # ==========================
 # Inicio de la aplicación
